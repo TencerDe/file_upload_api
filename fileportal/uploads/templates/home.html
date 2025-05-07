@@ -1,0 +1,11 @@
+<h1>Public Files</h1>
+<ul>
+  {% for file in files %}
+    <div>
+        <p><strong>File:</strong> {{ file.title }}</p>
+        <p><strong>Uploaded by:</strong> {{ file.user.username }}</p> <!-- Displaying the username -->
+        <a href="{% url 'download' file_id=file.id %}">Download</a>
+    </div>
+{% endfor %}
+</ul>
+<a href="{% url 'login' %}">Login</a> | <a href="{% url 'signup' %}">Signup</a>
